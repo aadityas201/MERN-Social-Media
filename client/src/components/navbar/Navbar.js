@@ -4,12 +4,15 @@ import PersonIcon from "@mui/icons-material/Person";
 import SearchIcon from "@mui/icons-material/Search";
 import NotificationsIcon from "@mui/icons-material/Notifications";
 import ChatIcon from "@mui/icons-material/Chat";
+import { Link } from "react-router-dom";
 
 const Navbar = () => {
   return (
     <div className="navbarContainer">
       <div className="navbarLeft">
-        <span className="logo">MERNSocial</span>
+        <Link to="/">
+          <span className="logo">MERNSocial</span>
+        </Link>
       </div>
       <div className="navbarCenter">
         <div className="searchbar">

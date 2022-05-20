@@ -82,3 +82,8 @@
   font-weight: 500;
   cursor: pointer;
 }
+
+input,
+button {
+  margin-bottom: 20px;
+}

@@ -1,10 +1,14 @@
 import React from "react";
 import "./closefriend.css";
 const CloseFriend = (user) => {
-  console.log(user);
+  const publicfolder = process.env.REACT_APP_PUBLIC_FOLDER;
   return (
     <li className="sidebarFriend">
-      <img className="sidebarFriendImg" src={user.user.profilePicture} alt="" />
+      <img
+        className="sidebarFriendImg"
+        src={publicfolder + user.user.profilePicture}
+        alt=""
+      />
       <span className="sidebarFriendName">{user.user.username}</span>
     </li>
   );

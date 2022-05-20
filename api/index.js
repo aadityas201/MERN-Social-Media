@@ -12,7 +12,12 @@ dotenv.config({ path: "./.env" });
 
 mongoose.connect(
   process.env.MongoDb_Url,
-  { useNewUrlParser: true, useUnifiedTopology: true },
+  {
+    useNewUrlParser: true,
+    useCreateIndex: true,
+    useFindAndModify: false,
+    useUnifiedTopology: true,
+  },
   () => {
     console.log("Connected to MongoDB");
   }
@@ -21,7 +26,7 @@ mongoose.connect(
 //middleware
 app.use(express.json());
 app.use(helmet());
-app.use(morgan("common"));
+app.use(morgan("dev"));
 
 app.use("/api/auth", authRoute);
 app.use("/api/users", userRoute);
